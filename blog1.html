@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog 1 – SDG 13 Research – EN8905 Blog</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0a1628;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+/* NAV */
+nav {
+  background: #0f2040;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  border-bottom: 2px solid #1e3a6e;
+  position: sticky; top: 0; z-index: 100;
+}
+nav .brand { color: #38bdf8; font-weight: 700; font-size: 1rem; }
+nav .nav-links a {
+  color: #94a3b8; text-decoration: none; margin-left: 1.4rem;
+  font-size: 0.85rem; transition: color .2s;
+}
+nav .nav-links a:hover { color: #38bdf8; }
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0f2040 0%, #1a3a6e 50%, #0e4d6e 100%);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 3px solid #38bdf8;
+}
+.hero .tag {
+  display: inline-block; background: #1e3a6e; color: #38bdf8;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: .1em;
+  padding: .3rem .9rem; border-radius: 20px; margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); color: #f0f9ff; margin-bottom: .8rem; }
+.hero .subtitle { color: #93c5fd; font-size: 1rem; max-width: 680px; margin: 0 auto 1.2rem; }
+.hero .meta { color: #64748b; font-size: 0.82rem; }
+/* MAIN */
+main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+/* SECTIONS */
+.section-card {
+  background: #0f2040;
+  border: 1px solid #1e3a6e;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.section-card h2 {
+  color: #38bdf8; font-size: 1.3rem; margin-bottom: 1rem;
+  padding-bottom: .5rem; border-bottom: 1px solid #1e3a6e;
+}
+.section-card h3 { color: #93c5fd; font-size: 1.05rem; margin: 1.2rem 0 .5rem; }
+.section-card p { color: #cbd5e1; margin-bottom: .9rem; }
+.section-card ul, .section-card ol { padding-left: 1.4rem; color: #cbd5e1; margin-bottom: .9rem; }
+.section-card li { margin-bottom: .4rem; }
+/* CALLOUT BOXES */
+.callout {
+  border-left: 4px solid #38bdf8; background: #0a1e40;
+  padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1rem 0;
+}
+.callout.warning { border-color: #f59e0b; }
+.callout.success { border-color: #22c55e; }
+.callout.danger  { border-color: #ef4444; }
+.callout strong  { color: #f0f9ff; }
+/* DATA TABLE */
+table {
+  width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .88rem;
+}
+th {
+  background: #1e3a6e; color: #93c5fd; padding: .65rem .9rem;
+  text-align: left; font-weight: 600;
+}
+td { padding: .6rem .9rem; border-bottom: 1px solid #1a2e50; color: #cbd5e1; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #0e2040; }
+.good  { color: #22c55e; font-weight: 600; }
+.bad   { color: #ef4444; font-weight: 600; }
+.mid   { color: #f59e0b; font-weight: 600; }
+/* STAT CARDS */
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem; margin: 1.2rem 0;
+}
+.stat-card {
+  background: #0a1e40; border: 1px solid #1e3a6e;
+  border-radius: 10px; padding: 1.1rem; text-align: center;
+}
+.stat-card .num { font-size: 1.8rem; font-weight: 700; color: #38bdf8; }
+.stat-card .unit { font-size: .75rem; color: #64748b; margin-top: .1rem; }
+.stat-card .label { font-size: .82rem; color: #94a3b8; margin-top: .3rem; }
+/* SDG BADGE */
+.sdg-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #1a3060; border: 1px solid #38bdf8;
+  padding: .4rem 1rem; border-radius: 20px; margin: .3rem;
+  font-size: .85rem; color: #93c5fd; font-weight: 600;
+}
+/* EVIDENCE BOX */
+.evidence {
+  background: #071428; border: 2px dashed #1e3a6e;
+  border-radius: 8px; padding: 1.2rem; margin: 1rem 0;
+  font-size: .88rem; color: #64748b;
+}
+.evidence strong { color: #38bdf8; }
+/* QUIZ */
+.quiz-q {
+  background: #0a1e40; border-radius: 8px;
+  padding: 1rem 1.2rem; margin: .8rem 0;
+}
+.quiz-q .q-text { color: #f0f9ff; font-weight: 600; margin-bottom: .5rem; }
+.quiz-q .answer { color: #22c55e; font-size: .9rem; }
+/* FOOTER */
+footer {
+  background: #0f2040; border-top: 1px solid #1e3a6e;
+  text-align: center; padding: 1.5rem;
+  color: #475569; font-size: .82rem; margin-top: 3rem;
+}
+footer a { color: #38bdf8; text-decoration: none; }
+/* PROGRESS */
+.progress-bar {
+  background: #1e3a6e; border-radius: 6px; height: 10px;
+  overflow: hidden; margin: .4rem 0 1rem;
+}
+.progress-fill { height: 100%; border-radius: 6px; background: #38bdf8; }
+/* CHART BAR (CSS only) */
+.bar-chart { margin: 1rem 0; }
+.bar-row { display: flex; align-items: center; margin: .5rem 0; gap: .8rem; }
+.bar-row .bl { width: 130px; font-size: .82rem; color: #94a3b8; text-align: right; flex-shrink:0; }
+.bar-row .bf { height: 22px; border-radius: 4px; display:flex; align-items:center;
+               padding-left: .5rem; font-size:.78rem; font-weight:600; color:#fff; }
+/* STAGE PILL */
+.stage-pill {
+  background:#1e3a6e; color:#38bdf8; font-size:.75rem;
+  font-weight:700; letter-spacing:.08em; padding:.25rem .8rem;
+  border-radius:20px; text-transform:uppercase; display:inline-block; margin-bottom:.8rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">🌊 WindVsGas · EN8905</span>
+  <div class="nav-links"><a href="index.html">Home</a><a href="blog1.html">1·SDG Research</a><a href="blog2.html">2·Energy Overview</a><a href="blog3.html">3·Comparison</a><a href="blog4.html">4·Practical</a><a href="blog5.html">5·Ethics</a><a href="blog6.html">6·Awareness</a><a href="blog7.html">7·Reflection</a><a href="blog8.html">8·Conclusions</a></div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Blog Entry 1 · Stage 1 – SDG Research</div>
+  <h1>SDG 13 – Climate Action:<br>Goals, Targets &amp; the Energy Connection</h1>
+  <p class="subtitle">Understanding what SDG 13 demands from the global energy sector</p>
+  <p class="meta">Posted: 22 June 2026 &nbsp;·&nbsp; Nouraldeen M Alsharidi</p>
+</div>
+<main>
+  <div class="section-card">
+    <span class="stage-pill">Stage 1 — SDG Research</span>
+    <h2>What is SDG 13?</h2>
+    <p>
+      SDG 13 – <em>Take urgent action to combat climate change and its impacts</em> — is one of the
+      17 United Nations Sustainable Development Goals adopted in the 2030 Agenda. It recognises that
+      climate change is the defining challenge of our time, threatening food security, water supplies,
+      coastal cities, and economic stability worldwide.
+    </p>
+    <div class="callout">
+      <strong>Key Fact:</strong> The IPCC AR6 (2022) report confirms that global average temperatures
+      have already risen 1.1 °C above pre-industrial levels, and without urgent action, we risk
+      exceeding the 1.5 °C threshold within the next decade.
+    </div>
+    <h2>SDG 13 Targets Relevant to Energy</h2>
+    <table>
+      <tr><th>Target</th><th>Description</th><th>Energy Relevance</th></tr>
+      <tr>
+        <td><strong>13.1</strong></td>
+        <td>Strengthen resilience to climate hazards</td>
+        <td>Grid resilience against extreme weather; diversifying away from gas reduces price volatility</td>
+      </tr>
+      <tr>
+        <td><strong>13.2</strong></td>
+        <td>Integrate climate change into national policies</td>
+        <td>Bahrain's National Renewable Energy Programme (NREP) targets 20% renewables by 2035</td>
+      </tr>
+      <tr>
+        <td><strong>13.3</strong></td>
+        <td>Improve education and capacity on climate change</td>
+        <td>Engineering curricula, public awareness of clean energy technologies</td>
+      </tr>
+      <tr>
+        <td><strong>13.a</strong></td>
+        <td>USD 100 billion/year climate finance for developing nations</td>
+        <td>Financing offshore wind in Gulf states through Green Climate Fund</td>
+      </tr>
+    </table>
+    <h2>How Energy Connects to SDG 13</h2>
+    <p>
+      The energy sector is the single largest contributor to global greenhouse gas (GHG) emissions —
+      responsible for approximately <strong>73% of all anthropogenic CO₂</strong> (IEA, 2024).
+      This makes the transformation of electricity generation the most critical lever for meeting SDG 13.
+    </p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">73%</div><div class="label">of GHGs from energy sector</div></div>
+      <div class="stat-card"><div class="num">1.5°C</div><div class="label">Paris Agreement threshold</div></div>
+      <div class="stat-card"><div class="num">2050</div><div class="label">Net-zero target year (IEA)</div></div>
+      <div class="stat-card"><div class="num">490</div><div class="unit">g CO₂/kWh</div><div class="label">Natural gas lifecycle</div></div>
+    </div>
+    <h2>Global Sustainability Frameworks Alignment</h2>
+    <ul>
+      <li><strong>Paris Agreement (2015):</strong> Limit warming to 1.5 °C; NDCs require energy transition</li>
+      <li><strong>IEA Net Zero by 2050:</strong> No new fossil fuel development; wind &amp; solar to supply 70% of power by 2050</li>
+      <li><strong>IRENA World Energy Transitions Outlook:</strong> Offshore wind capacity must reach 2,000 GW by 2050</li>
+      <li><strong>Bahrain NREP 2021:</strong> 20% renewables by 2035; wind feasibility studies underway for offshore sites</li>
+    </ul>
+    <div class="callout success">
+      <strong>Conclusion for Blog 1:</strong> SDG 13 directly demands rapid decarbonisation of electricity generation.
+      For Bahrain and MENA, this means evaluating wind energy as a low-carbon alternative to the dominant
+      natural gas power system — which is exactly what this project assesses.
+    </div>
+  </div>
+  <div style="display:flex;gap:1rem;justify-content:flex-end;margin-top:1rem;">
+    <a href="index.html" style="color:#38bdf8;font-size:.9rem;">← Home</a>
+    <a href="blog2.html" style="color:#38bdf8;font-size:.9rem;">Next: Blog 2 →</a>
+  </div>
+</main>
+
+<footer>
+  EN8905 – Energy, Environment &amp; Sustainability &nbsp;·&nbsp; Bahrain Polytechnic
+  &nbsp;·&nbsp; Nouraldeen M Alsharidi &nbsp;·&nbsp; July 2026<br>
+  SDG 13 – Climate Action | Offshore Wind vs. Natural Gas
+</footer>
+</body>
+</html>
