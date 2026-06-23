@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog 2 – Regional Energy Context – EN8905 Blog</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0a1628;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+/* NAV */
+nav {
+  background: #0f2040;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  border-bottom: 2px solid #1e3a6e;
+  position: sticky; top: 0; z-index: 100;
+}
+nav .brand { color: #38bdf8; font-weight: 700; font-size: 1rem; }
+nav .nav-links a {
+  color: #94a3b8; text-decoration: none; margin-left: 1.4rem;
+  font-size: 0.85rem; transition: color .2s;
+}
+nav .nav-links a:hover { color: #38bdf8; }
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0f2040 0%, #1a3a6e 50%, #0e4d6e 100%);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 3px solid #38bdf8;
+}
+.hero .tag {
+  display: inline-block; background: #1e3a6e; color: #38bdf8;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: .1em;
+  padding: .3rem .9rem; border-radius: 20px; margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); color: #f0f9ff; margin-bottom: .8rem; }
+.hero .subtitle { color: #93c5fd; font-size: 1rem; max-width: 680px; margin: 0 auto 1.2rem; }
+.hero .meta { color: #64748b; font-size: 0.82rem; }
+/* MAIN */
+main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+/* SECTIONS */
+.section-card {
+  background: #0f2040;
+  border: 1px solid #1e3a6e;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.section-card h2 {
+  color: #38bdf8; font-size: 1.3rem; margin-bottom: 1rem;
+  padding-bottom: .5rem; border-bottom: 1px solid #1e3a6e;
+}
+.section-card h3 { color: #93c5fd; font-size: 1.05rem; margin: 1.2rem 0 .5rem; }
+.section-card p { color: #cbd5e1; margin-bottom: .9rem; }
+.section-card ul, .section-card ol { padding-left: 1.4rem; color: #cbd5e1; margin-bottom: .9rem; }
+.section-card li { margin-bottom: .4rem; }
+/* CALLOUT BOXES */
+.callout {
+  border-left: 4px solid #38bdf8; background: #0a1e40;
+  padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1rem 0;
+}
+.callout.warning { border-color: #f59e0b; }
+.callout.success { border-color: #22c55e; }
+.callout.danger  { border-color: #ef4444; }
+.callout strong  { color: #f0f9ff; }
+/* DATA TABLE */
+table {
+  width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .88rem;
+}
+th {
+  background: #1e3a6e; color: #93c5fd; padding: .65rem .9rem;
+  text-align: left; font-weight: 600;
+}
+td { padding: .6rem .9rem; border-bottom: 1px solid #1a2e50; color: #cbd5e1; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #0e2040; }
+.good  { color: #22c55e; font-weight: 600; }
+.bad   { color: #ef4444; font-weight: 600; }
+.mid   { color: #f59e0b; font-weight: 600; }
+/* STAT CARDS */
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem; margin: 1.2rem 0;
+}
+.stat-card {
+  background: #0a1e40; border: 1px solid #1e3a6e;
+  border-radius: 10px; padding: 1.1rem; text-align: center;
+}
+.stat-card .num { font-size: 1.8rem; font-weight: 700; color: #38bdf8; }
+.stat-card .unit { font-size: .75rem; color: #64748b; margin-top: .1rem; }
+.stat-card .label { font-size: .82rem; color: #94a3b8; margin-top: .3rem; }
+/* SDG BADGE */
+.sdg-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #1a3060; border: 1px solid #38bdf8;
+  padding: .4rem 1rem; border-radius: 20px; margin: .3rem;
+  font-size: .85rem; color: #93c5fd; font-weight: 600;
+}
+/* EVIDENCE BOX */
+.evidence {
+  background: #071428; border: 2px dashed #1e3a6e;
+  border-radius: 8px; padding: 1.2rem; margin: 1rem 0;
+  font-size: .88rem; color: #64748b;
+}
+.evidence strong { color: #38bdf8; }
+/* QUIZ */
+.quiz-q {
+  background: #0a1e40; border-radius: 8px;
+  padding: 1rem 1.2rem; margin: .8rem 0;
+}
+.quiz-q .q-text { color: #f0f9ff; font-weight: 600; margin-bottom: .5rem; }
+.quiz-q .answer { color: #22c55e; font-size: .9rem; }
+/* FOOTER */
+footer {
+  background: #0f2040; border-top: 1px solid #1e3a6e;
+  text-align: center; padding: 1.5rem;
+  color: #475569; font-size: .82rem; margin-top: 3rem;
+}
+footer a { color: #38bdf8; text-decoration: none; }
+/* PROGRESS */
+.progress-bar {
+  background: #1e3a6e; border-radius: 6px; height: 10px;
+  overflow: hidden; margin: .4rem 0 1rem;
+}
+.progress-fill { height: 100%; border-radius: 6px; background: #38bdf8; }
+/* CHART BAR (CSS only) */
+.bar-chart { margin: 1rem 0; }
+.bar-row { display: flex; align-items: center; margin: .5rem 0; gap: .8rem; }
+.bar-row .bl { width: 130px; font-size: .82rem; color: #94a3b8; text-align: right; flex-shrink:0; }
+.bar-row .bf { height: 22px; border-radius: 4px; display:flex; align-items:center;
+               padding-left: .5rem; font-size:.78rem; font-weight:600; color:#fff; }
+/* STAGE PILL */
+.stage-pill {
+  background:#1e3a6e; color:#38bdf8; font-size:.75rem;
+  font-weight:700; letter-spacing:.08em; padding:.25rem .8rem;
+  border-radius:20px; text-transform:uppercase; display:inline-block; margin-bottom:.8rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">🌊 WindVsGas · EN8905</span>
+  <div class="nav-links"><a href="index.html">Home</a><a href="blog1.html">1·SDG Research</a><a href="blog2.html">2·Energy Overview</a><a href="blog3.html">3·Comparison</a><a href="blog4.html">4·Practical</a><a href="blog5.html">5·Ethics</a><a href="blog6.html">6·Awareness</a><a href="blog7.html">7·Reflection</a><a href="blog8.html">8·Conclusions</a></div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Blog Entry 2 · Stage 1 – Regional Energy Context</div>
+  <h1>Bahrain &amp; MENA Energy Context:<br>Why the Transition Matters Here</h1>
+  <p class="subtitle">Regional energy needs, gas dependency, and the opportunity for offshore wind</p>
+  <p class="meta">Posted: 23 June 2026 &nbsp;·&nbsp; Nouraldeen M Alsharidi</p>
+</div>
+<main>
+  <div class="section-card">
+    <span class="stage-pill">Stage 1 — Regional Energy Need</span>
+    <h2>Bahrain's Current Energy Landscape</h2>
+    <p>
+      Bahrain is a small island nation of 780 km² with a population of ~1.5 million and one of the
+      highest per-capita energy consumption rates in the world. The country's electricity grid is
+      almost entirely dependent on <strong>natural gas</strong>, which fuels Combined Cycle Gas Turbine
+      (CCGT) and Open Cycle Gas Turbine (OCGT) power stations.
+    </p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">~4,000</div><div class="unit">MW</div><div class="label">Installed generation capacity</div></div>
+      <div class="stat-card"><div class="num">98%</div><div class="label">Powered by natural gas</div></div>
+      <div class="stat-card"><div class="num">9,700</div><div class="unit">kWh/person/yr</div><div class="label">Per-capita consumption</div></div>
+      <div class="stat-card"><div class="num">20%</div><div class="label">NREP renewables target by 2035</div></div>
+    </div>
+    <h2>Why Gas Dominates — and Why That's a Problem</h2>
+    <p>
+      Historically, natural gas was cheap and abundant in the Gulf. However, Bahrain's gas reserves
+      are depleting, and the country increasingly imports gas from Saudi Arabia via the GASCO pipeline.
+      This creates an <strong>energy security risk</strong> and a growing <strong>fiscal burden</strong>
+      on government subsidies.
+    </p>
+    <div class="callout warning">
+      <strong>Energy Security Issue:</strong> Bahrain spent approximately BD 1.2 billion on fuel
+      subsidies in 2023. As domestic reserves decline, import dependency increases, exposing the
+      national grid to geopolitical and price risks.
+    </div>
+    <h2>MENA Region — Offshore Wind Potential</h2>
+    <p>
+      While the Gulf is famous for solar irradiation, studies by IRENA (2023) and the World Bank
+      identify significant <strong>offshore wind potential</strong> in the Red Sea, Gulf of Oman,
+      and Arabian Gulf — including shallow waters around Bahrain that are technically suitable for
+      fixed-bottom offshore turbines.
+    </p>
+    <table>
+      <tr><th>Country</th><th>Offshore Wind Potential (GW)</th><th>Status</th></tr>
+      <tr><td>Saudi Arabia</td><td>~200 GW</td><td class="good">Active – NEOM 500 MW planned</td></tr>
+      <tr><td>Oman</td><td>~150 GW (offshore + coastal)</td><td class="mid">Feasibility studies</td></tr>
+      <tr><td>UAE</td><td>~50 GW</td><td class="mid">Research stage</td></tr>
+      <tr><td>Bahrain</td><td>~15 GW (shallow water)</td><td class="mid">NREP wind assessment 2024</td></tr>
+      <tr><td>Kuwait</td><td>~30 GW</td><td class="bad">Early planning</td></tr>
+    </table>
+    <h2>The Regional Energy Need SDG 13 Addresses</h2>
+    <p>
+      MENA is one of the most climate-vulnerable regions on Earth. According to the World Bank (2022),
+      temperatures in the Gulf could reach 50+ °C regularly by 2050 under business-as-usual scenarios,
+      threatening human habitability and dramatically increasing electricity demand for cooling.
+    </p>
+    <div class="callout danger">
+      <strong>Climate Risk:</strong> A 1 °C rise in average temperature increases peak electricity
+      demand by approximately 5–8% in Gulf states (IEA). This creates a reinforcing cycle — more
+      cooling demand → more gas burning → more warming — unless the grid is decarbonised.
+    </div>
+    <div class="callout success">
+      <strong>Conclusion for Blog 2:</strong> Bahrain's near-total gas dependency, depleting domestic
+      reserves, and extreme climate vulnerability make the evaluation of offshore wind as a future
+      energy alternative directly relevant to SDG 13's regional and global targets.
+    </div>
+  </div>
+  <div style="display:flex;gap:1rem;justify-content:flex-end;margin-top:1rem;">
+    <a href="blog1.html" style="color:#38bdf8;font-size:.9rem;">← Blog 1</a>
+    <a href="blog3.html" style="color:#38bdf8;font-size:.9rem;">Next: Blog 3 →</a>
+  </div>
+</main>
+
+<footer>
+  EN8905 – Energy, Environment &amp; Sustainability &nbsp;·&nbsp; Bahrain Polytechnic
+  &nbsp;·&nbsp; Nouraldeen M Alsharidi &nbsp;·&nbsp; July 2026<br>
+  SDG 13 – Climate Action | Offshore Wind vs. Natural Gas
+</footer>
+</body>
+</html>
